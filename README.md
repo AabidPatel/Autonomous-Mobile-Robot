@@ -48,10 +48,10 @@ Prototype development of Modular Autonomous Mobile Robot with interchangeable ex
 5. The Mobile robot was then spawned in the map and the mapping was performed using the Lidars using Gmapping node, thus implementing SLAM in ROS.
    1. It is a necessary package for the autonomous navigation of the mobile robot. It provides laser-based SLAM as a ros node called "slam_gmapping"
 6. R-Viz was utilized as the visualization software and the map visualized by the Lidars was seen in the environment.
-  1. The ROS navigation stack is a collection of software packages that you can use to help your robot move from a starting location to the end location safely.
+   1. The ROS navigation stack is a collection of software packages that you can use to help your robot move from a starting location to the end location safely.
 7. We needed to make sure that there was no error in the Robot Mdoel and the topic /scan data in R-Viz.
 8. After the map was saved by scanning the Lidar data in Gazrbo, autonomous navigation was performed using the AMCL package. The AMCL package is Adaptive Monte-Carlo Localization algorithm which uses a probablistic approch for localizing the robot and navigating within a known map.
-  1. AMCL is a two dimensional probabilistic localization system. It uses a particle filter to track a robot's pose against a known map.
-  2. However, in this project, the AMCL package was used only for simulation. For the actual robot, Cartographer was implemented. Cartographer takes data from LiDAR laser scans to estimate the positions of the robot.
+   1. AMCL is a two dimensional probabilistic localization system. It uses a particle filter to track a robot's pose against a known map.
+   2. However, in this project, the AMCL package was used only for simulation. For the actual robot, Cartographer was implemented. Cartographer takes data from LiDAR laser scans to estimate the positions of the robot.
 
  ![AMR5](https://github.com/AabidPatel/Modular-Autonomous-Mobile-Robot/assets/73630123/153c4e2c-9632-44d0-82cc-648ab5304f82)
