@@ -56,9 +56,9 @@ Prototype development of Modular Autonomous Mobile Robot with interchangeable ex
  ![AMR5](https://github.com/AabidPatel/Modular-Autonomous-Mobile-Robot/assets/73630123/153c4e2c-9632-44d0-82cc-648ab5304f82)
 
 
- # Autonomous Navigation
+# Autonomous Navigation
 
-## Once the simulation runs properly without any errors and the robot assembly is done we can execute the following commands to operate the robot autonomously.
+Once the simulation runs properly without any errors and the robot assembly is done we can execute the following commands to operate the robot autonomously.
 
 1. We needed to first provide permission to each of the ports on the Jetson for the 2-Lidars and the hoverboard driver using the following cmd:
 ```
