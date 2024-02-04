@@ -61,16 +61,33 @@ Prototype development of Modular Autonomous Mobile Robot with interchangeable ex
 ## Once the simulation runs properly without any errors and the robot assembly is done we can execute the following commands to operate the robot autonomously.
 
 1. We needed to first provide permission to each of the ports on the Jetson for the 2-Lidars and the hoverboard driver using the following cmd:
-'''
+```
 sudo chmod 666 /dev/ttyTHS1
 sudo chmod 777 /dev/ttyUSB0
 sudo chmod 777 /dev/ttyUSB1
-'''
+```
 2. The real-time data of the lidars were computed using the YD_lidar ROS package. To run the front and the back lidar we used the following cmd:
+```
+roslaunch tortoisebot_firmware fl.launch
+roslaunch tortoisebot_firmware bl.launch
+```
 3. Since we used two lidars we merged their data together using the IRA_tools_merger and adjusting their TF-models in RViz.The /front_scan and /back_scan data from both the Lidars were merged to the topic /scan data by publishing data to virtual lidars.
+```
+roslaunch ira_laser_tools merge.launch
+```
 4. The Mapping of the robot in the environment was done in R-Viz by utilizing the Gmapping node and Cartographer. Using the Google Cartographer algorithm eliminated the use of encoders to localize the robot in the known map.
+```
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=/hoverboard_velocity_controller/cmd_vel
+roslaunch tortoisebot_firmware bringup.launch
+roslaunch tortoisebot_firmware server_bringup.launch
+roslaunch tortoisebot_slam tortoisebot_slam.launch
+```
 5. Autonomous Navigation: The navigation stack was implemented on the robot and parameters according to the size of the actual robot were defined.
    1. The Global and Local cost-map parameters were defined for the AMR to know its restrictions for navigating in the map and move from one point to another.
    2. The value of sim-time was changed for adjusting the speed of the robot to reach its destination.
    3. The target-position was defined and the robot was navigating by detecting the static and dynamic obstcles in the map to the final destination.
-   4. We launch the scanned map and then launch the navigation stack :
+   4. We launch the scanned map and then launch the navigation stack:
+   ```
+   rosrun map_server map_saver -f home_1
+   roslaunch tortoisebot_navigation tortoisebot_navigation.launch
+   ```
