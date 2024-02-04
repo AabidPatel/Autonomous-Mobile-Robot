@@ -52,7 +52,6 @@ Prototype development of Modular Autonomous Mobile Robot with interchangeable ex
 7. We needed to make sure that there was no error in the Robot Mdoel and the topic /scan data in R-Viz.
 8. After the map was saved by scanning the Lidar data in Gazrbo, autonomous navigation was performed using the AMCL package. The AMCL package is Adaptive Monte-Carlo Localization algorithm which uses a probablistic approch for localizing the robot and navigating within a known map.
   1. AMCL is a two dimensional probabilistic localization system. It uses a particle filter to track a robot's pose against a known map.
-  
-  ![AMR5](https://github.com/AabidPatel/Modular-Autonomous-Mobile-Robot/assets/73630123/153c4e2c-9632-44d0-82cc-648ab5304f82)
-
   2. However, in this project, the AMCL package was used only for simulation. For the actual robot, Cartographer was implemented. Cartographer takes data from LiDAR laser scans to estimate the positions of the robot.
+
+ ![AMR5](https://github.com/AabidPatel/Modular-Autonomous-Mobile-Robot/assets/73630123/153c4e2c-9632-44d0-82cc-648ab5304f82)
