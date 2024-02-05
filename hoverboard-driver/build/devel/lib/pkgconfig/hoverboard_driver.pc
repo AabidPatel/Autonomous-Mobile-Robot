@@ -1,0 +1,8 @@
+prefix=/home/jetson/catkin_ws/src/hoverboard-driver/build/devel
+
+Name: hoverboard_driver
+Description: Description of hoverboard_driver
+Version: 0.0.1
+Cflags: -I/home/jetson/catkin_ws/src/hoverboard-driver/build/devel/include -I/home/jetson/catkin_ws/src/hoverboard-driver/include
+Libs: -L${prefix}/lib 
+Requires: 

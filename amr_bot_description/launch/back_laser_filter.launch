@@ -1,0 +1,7 @@
+<launch>
+  <node pkg="laser_filters" type="back_filter"
+      name="back_laser_filter">
+    <rosparam command="load" file="$(find amr_bot_description)/config/back_scan.yaml" />
+    <!-- <remap from="/scan_filtered" to="/back_laser" /> -->
+  </node>
+</launch>
